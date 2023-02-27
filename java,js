@@ -1,0 +1,18 @@
+document.getElementById('miFormulario').addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   var xhr = new XMLHttpRequest();
+   var url = 'archivo.php';
+   var datos = new FormData(this);
+
+   xhr.open('POST', url, true);
+   xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+   xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+         // Hacer algo después de enviar los datos
+      }
+   }
+
+   xhr.send(datos);
+});
